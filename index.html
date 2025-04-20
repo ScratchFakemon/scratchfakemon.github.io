@@ -12,18 +12,17 @@
     body {
         font-family: 'Mona Sans', 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
         background: #2a97fc;
-    }
-    .pfp {
-        border-radius: 25px;
-        width: 100px;
-    }
-    .main {
         text-align: center;
         padding-top: 50px;
         color: white;
         align-content: center;
     }
-    .main a {
+    .pfp {
+        border-radius: 25px;
+        width: 100px;
+    }
+   
+    a {
         color: #1239fe;
         text-decoration: none;
         font-weight: bold;
@@ -37,7 +36,7 @@
         text-decoration: none;
         transition: all 1s cubic-bezier(.3,.94,.3,.95);
     }
-    .main a:hover {
+    a:hover {
         color: #2e4ff6;
         text-decoration: underline;
         font-weight: bolder; 
@@ -60,7 +59,7 @@
         border: solid 0.5px;
         margin-bottom: 25px;
     }
-    .links, .navbar a {
+    .links, .navbar {
     display: flex;
     justify-content: center;
     gap: 15px; /* Adds spacing between links */
@@ -87,12 +86,14 @@
 
 
 
+
 </style>
     </head>
     <body>
         <div class="main">
             <div class="navbar">
                 <a href="/">Home</a>
+                <a href="/link">Link this Site</a>
             </div>
         <img src="https://uploads.scratch.mit.edu/get_image/user/117698316_99x99.png" class="pfp">
         <h1>Fakemon's Website</h1>
