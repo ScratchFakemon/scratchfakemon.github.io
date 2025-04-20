@@ -31,13 +31,20 @@
         border-radius: 100px;
         justify-content: center;
         padding: 10px 5px;
+        display: flex;
+        align-items: center; /* Aligns icons with text */
+        gap: 5px; /* Spacing between icon and text */
+        text-decoration: none;
+        transition: all 1s cubic-bezier(.3,.94,.3,.95);
     }
     .main a:hover {
         color: #2e4ff6;
         text-decoration: underline;
         font-weight: bolder; 
         background-color: #8da6ffec;
-        padding: 10px 5px;
+        padding: 10px 10px;
+        transition: all 1s cubic-bezier(.3,.94,.3,.95);
+        font-size-adjust: 10px;
     }
     #about {
         border-radius: 25px;
@@ -49,33 +56,44 @@
     .but {
         width: 50%;
         border-radius: 100px;
-        border-color: lightblue;
+        border-color: #24baec;
         border: solid 0.5px;
         margin-bottom: 25px;
     }
-    .links {
+    .links, .navbar a {
     display: flex;
     justify-content: center;
     gap: 15px; /* Adds spacing between links */
 }
 
-.links a {
-    display: flex;
-    align-items: center; /* Aligns icons with text */
-    gap: 5px; /* Spacing between icon and text */
-    text-decoration: none;
-}
+
 
 .main a img {
     width: 20px;
-    padding: 0; /* Remove unnecessary padding */
 }
+
+.navbar {
+    background-color:lightskyblue;
+    display: flex;
+    width: 80%;
+    position: 0;
+    padding: 5px;
+    margin: 0 0 20px 0;
+    align-content: center;
+    justify-content: center;
+    justify-self: center;
+    border-radius: 100px;
+}
+
 
 
 </style>
     </head>
     <body>
         <div class="main">
+            <div class="navbar">
+                <a href="/">Home</a>
+            </div>
         <img src="https://uploads.scratch.mit.edu/get_image/user/117698316_99x99.png" class="pfp">
         <h1>Fakemon's Website</h1>
         Heyo! I'm Scratch_Fakemon!
@@ -99,6 +117,9 @@
         </a>
         <a href="https://github.com/ScratchFakemon">
             <img src="https://github.com/favicon.ico">GitHub
+        </a>
+        <a href="mailto:scratchfakemon@gmail.com">
+            <img src="Mail Icon.svg">Email
         </a>
     </div>
     
