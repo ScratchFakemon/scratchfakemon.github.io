@@ -2,7 +2,7 @@
 <html>
   <head>
     <meta charset="UTF-8" />
-    <title>Fakemon's Website | Button Clicker</title>
+    <title>Fakemon's Website | Number Guesser</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
@@ -43,7 +43,7 @@
         text-decoration: none;
         transition: all 1s cubic-bezier(0.3, 0.94, 0.3, 0.95);
       }
-       button {
+       button, input {
         color: #1239fe;
         text-decoration: none;
         font-weight: bold;
@@ -61,6 +61,11 @@
         justify-self: center;
         margin: 20px;
        
+      }
+      input {
+        background-color: #116c8a;
+        border: solid #309cc0 5px;
+        color: white;
       }
       a:hover, button:hover {
         color: #2e4ff6;
@@ -110,20 +115,23 @@
       }
     </style>
     <script>
-        let clicks;
-        let btn;
-      document.addEventListener("DOMContentLoaded", () => {localStorage.setItem("clicks", localStorage.getItem("clicks") ? localStorage.getItem("clicks") : 0)
-        clicks = localStorage.getItem("clicks");
-         btn = document.getElementById("clickme")
-        if (clicks != 0) {
-            btn.innerHTML = `Clicks: ${clicks}`;
-        }})
+      function random(min, max) {
+    return Math.floor(Math.random() * (max - min)) + min;
+  }
+       let rng = random(0,100)
+        let guess;
+        let status;
+      document.addEventListener("DOMContentLoaded", () => {
+guess = document.getElementById("guess");
+status = document.getElementById("status");
+      })
        
-        
-        function btnClicked() {
-clicks++
-btn.innerHTML = `Clicks: ${clicks}`;
-localStorage.setItem("clicks", clicks)
+        function submitguess() {
+if (Number(guess.value) === rng) {
+status.innerHTML = "Congrats! You got it correct!"
+} else {
+  status.innerHTML = "Womp womp! You got it wrong! Guess again!"
+}
         }
     </script>
   </head>
@@ -133,19 +141,18 @@ localStorage.setItem("clicks", clicks)
         <a href="/">Home</a>
         <a href="/link">Link this Site</a>
         <a href="/buttonclicker">Button Clicker</a>
-         <a href="/numguess">Number Guesser</a>
+        <a href="/numguess">Number Guesser</a>
       </div>
       <img
         src="https://uploads.scratch.mit.edu/get_image/user/117698316_99x99.png"
         class="pfp"
       />
-      <h1>Button Clicker</h1>
-      <i>The Ultimate Game to Cure your Boredom!</i>
+      <h1>Number Guesser</h1>
+      <i>Guess a random number between 0 and 100!</i>
       <br>
-      - Scratch_Fakemon
-      <br>
-      <button id="clickme" onclick="btnClicked()">Click Me! </button>
-      <small>Your progress will be saved. Please note that your browser may clear local storage data automatically.</small>
+      <h3 id="status"></h3>
+      <input id="guess" type="number" placeholder="Put your guess here!"></input>
+      <button id="submit" onclick="submitguess()">Submit!</button>
     
       <hr class="but" />
       <div class="links">
