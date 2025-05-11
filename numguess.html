@@ -121,16 +121,22 @@
        let rng = random(0,100)
         let guess;
         let status;
+        let tries = 0;
       document.addEventListener("DOMContentLoaded", () => {
 guess = document.getElementById("guess");
 status = document.getElementById("status");
       })
        
         function submitguess() {
+            tries++
 if (Number(guess.value) === rng) {
-status.innerHTML = "Congrats! You got it correct!"
+status.innerHTML = `Congrats! You got it correct in ${tries} ${(tries == 1)? "try! That's super epic, dude" : "tries"}!`
 } else {
-  status.innerHTML = "Womp womp! You got it wrong! Guess again!"
+    if (rng > Number(guess.value)) {
+  status.innerHTML = "Womp womp! You got it wrong! Guess again! (Maybe try making your answer a little <b>higher</b>?)"
+} else {
+    status.innerHTML = "Womp womp! You got it wrong! Guess again! (Maybe try making your answer a little <b>lower</b>?)"
+}
 }
         }
     </script>
