@@ -63,8 +63,6 @@
        
       }
       input {
-        background-color: #116c8a;
-        border: solid #309cc0 5px;
         color: white;
       }
       a:hover, button:hover {
@@ -113,6 +111,11 @@
         justify-self: center;
         border-radius: 100px;
       }
+      ::placeholder {
+  color: rgb(164, 204, 245);
+  opacity: 1; /* Stupid stuff for Firefox */
+  font-weight: 1.5px;
+}
     </style>
     <script>
       function random(min, max) {
@@ -139,6 +142,23 @@ status.innerHTML = `Congrats! You got it correct in ${tries} ${(tries == 1)? "tr
 }
 }
         }
+        function validifyValue() {
+          guess.value = clamp(guess.value, 0, 100)
+        }
+  function clamp(value, min, max) {
+    if (value > max) {
+      return max
+    } else if (value < min) {
+      return min
+    } else {
+      return value
+    }
+  }
+  document.onkeydown = (key) => {
+          if (key.key === "Enter") {
+            submitguess()
+          }
+        };
     </script>
   </head>
   <body>
@@ -157,7 +177,7 @@ status.innerHTML = `Congrats! You got it correct in ${tries} ${(tries == 1)? "tr
       <i>Guess a random number between 0 and 100!</i>
       <br>
       <h3 id="status"></h3>
-      <input id="guess" type="number" placeholder="Put your guess here!"></input>
+      <input id="guess" type="number" placeholder="Put your guess here!" onchange="validifyValue()"></input>
       <button id="submit" onclick="submitguess()">Submit!</button>
     
       <hr class="but" />
