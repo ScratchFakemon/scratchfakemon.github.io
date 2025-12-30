@@ -5,6 +5,8 @@ body {
   padding-top: 50px;
   color: white;
   align-content: center;
+  justify-content: center;
+  display: flex;
 }
 .pfp {
   border-radius: 25px;
@@ -39,8 +41,8 @@ input {
   justify-content: center;
   padding: 10px 5px;
   display: flex;
-  align-items: center; /* Aligns icons with text */
-  gap: 5px; /* Spacing between icon and text */
+  align-items: center;
+  gap: 5px;
   text-decoration: none;
   transition: all 1s cubic-bezier(0.3, 0.94, 0.3, 0.95);
   border: solid 0px;
@@ -63,19 +65,20 @@ button:hover {
 a:hover {
   color: #2e4ff6;
 }
-#about {
+#about, .code {
   border-radius: 25px;
   background-color: #3b3c3fe0;
-  padding: 10px 0;
-  width: 30%;
+  padding: 10px 5px;
   justify-self: center;
+  font-size: 14px;
+}
+#about {
+  width: 30%;
 }
 .code {
-  background-color: #3b3c3fe0;
-  border-radius: 25px;
   font-family: "Cascadia Code", monospace;
   padding: 10px;
-  font-size: 14px;
+  
 }
 .but {
   width: 50%;
@@ -92,17 +95,16 @@ a:hover {
   gap: 15px;
 }
 
-.main a img {
+a img {
   width: 25px;
 }
 
 .navbar {
   background-color: skyblue;
   display: flex;
-  width: 80%;
-  position: sticky;
+  min-width: fit-content;
   padding: 5px;
-  margin: 0 0 20px 0;
+  margin: 0 0 10px 0;
   align-content: center;
   justify-content: center;
   justify-self: center;
@@ -113,4 +115,7 @@ a:hover {
   opacity: 1; /* Stupid stuff for Firefox, or so I've been told */
   font-weight: thin;
   font-style: italic;
+}
+.main {
+  width: 100%;
 }
