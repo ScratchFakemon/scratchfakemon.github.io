@@ -8,9 +8,20 @@ body {
   justify-content: center;
   display: flex;
 }
+#status img {
+  border-radius: 25px;
+}
 .pfp {
   border-radius: 25px;
   width: 100px;
+}
+.sitelink img {
+  border-radius: 5px;
+}
+.sitelink:hover {
+  /* This is actually valid CSS; VS Code just doesn't want to accept it. */
+  color: attr(hltext type(<color>));
+  background-color: attr(hlbg type(<color>));
 }
 
 a {
@@ -50,11 +61,15 @@ input {
   justify-self: center;
   margin: 20px;
 }
+input[type="range"] {
+  padding: 0;
+}
 input {
   color: white;
 }
 a:hover,
-button:hover {
+button:hover:enabled {
+  cursor: pointer;
   text-decoration: underline;
   font-weight: bolder;
   background-color: #8da6ffec;
@@ -65,7 +80,8 @@ button:hover {
 a:hover {
   color: #2e4ff6;
 }
-#about, .code {
+#about,
+.code {
   border-radius: 25px;
   background-color: #3b3c3fe0;
   padding: 10px 5px;
@@ -78,7 +94,6 @@ a:hover {
 .code {
   font-family: "Cascadia Code", monospace;
   padding: 10px;
-  
 }
 .but {
   width: 50%;
@@ -118,4 +133,20 @@ a img {
 }
 .main {
   width: 100%;
+}
+#minesweeper {
+  justify-self: center;
+  width: fit-content;
+  display: grid;
+  grid-template-columns: repeat(attr(mswidth type(<number>)), 20px);
+  grid-template-rows: repeat(attr(msheight type(<number>)), 20px);
+  gap: 10px;
+}
+#minesweeper button {
+  width: 25px;
+  height: 25px;
+  border-radius: 5px;
+}
+#minesweeper button:disabled {
+  background-color: #3c8cb6;
 }

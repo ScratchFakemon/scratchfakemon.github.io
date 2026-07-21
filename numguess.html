@@ -13,16 +13,17 @@
         let status;
         let tries = 0;
         let hasSucceeded = false
+        const alreadySubmittedMessages = ["You already got it right...", "You said that already.", "Ok, buddy...", "...", "I GET IT!", "<strike>You're the type of person to spell color as qul'lar.</strike><br>Uh—I mean—", "Rerepititition at its finest", "bruh", '<img src="https://media0.giphy.com/media/v1.Y2lkPTZjMDliOTUyYmdoMzB2bXF4MGhrYjRsY29sbm14d3g2ZmdrbWpmMGk0M2J0cW1reCZlcD12MV9naWZzX3NlYXJjaCZjdD1n/WrNfErHio7ZAc/giphy.gif">', "💀", "🗿", "¯\\_(ツ)_/¯"]
       document.addEventListener("DOMContentLoaded", () => {
 guess = document.getElementById("guess");
 status = document.getElementById("status");
       })
        
-        function submitguess() {
+        function submitGuess() {
           if (!hasSucceeded)
             {tries++
 if (Number(guess.value) === rng) {
-status.innerHTML = `Congrats! You got it correct in ${tries} ${(tries == 1)? "try! I don't think even <i>I</i> could do that without cheating" : "tries"}!` // Pluralization
+status.innerHTML = `Congrats! You got it correct in ${tries} ${(tries == 1)? "try! I don't think even <i>I</i> could do that without cheating" : "tries"}!` // At least the website isn't in Polish!
 hasSucceeded = true
 } else {
     if (rng > Number(guess.value)) {
@@ -31,7 +32,7 @@ hasSucceeded = true
     status.innerHTML = "Womp womp! You got it wrong! Guess again! (Maybe try making your answer a little <b>lower</b>?)"
 }}
 } else {
-  status.innerHTML = "<i>You already got it right...</i>"
+  status.innerHTML = alreadySubmittedMessages[random(0, alreadySubmittedMessages.length)]
 }
         }
         function validifyValue() {
@@ -48,7 +49,7 @@ hasSucceeded = true
   }
   document.onkeydown = (key) => {
           if (key.key === "Enter") {
-            submitguess()
+            submitGuess()
           }
         };
     </script>
@@ -68,7 +69,7 @@ hasSucceeded = true
       <br>
       <h3 id="status"></h3>
       <input id="guess" type="number" placeholder="Put your guess here!" onchange="validifyValue()"></input>
-      <button id="submit" onclick="submitguess()">Submit!</button>
+      <button id="submit" onclick="submitGuess()">Submit!</button>
     
       <hr class="but" />
       <div class="links">

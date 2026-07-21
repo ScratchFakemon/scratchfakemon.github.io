@@ -1,12 +1,14 @@
 document.addEventListener("DOMContentLoaded", () => {
   let navbar = document.getElementsByClassName("navbar")[0];
-  navbar.innerHTML = `<a href="./">Home</a>
+  navbar.innerHTML = `
+        <a href="./">Home</a>
         <a href="link">Link this Site</a>
         <a href="buttonclicker">Button Clicker</a>
         <a href="numguess">Number Guesser</a>
-        <a href="friendsites">Friendsites</a>
-        `;
+        <a href="friendsitesnew">Friendsites</a>
+        `; // <a href="minesweeper">Minesweeper</a>
 
+  // TODO: Find higher-quality vector logos
   let links = document.getElementsByClassName("links")[0];
   links.innerHTML = `<a href="https://scratch.mit.edu/users/Scratch_Fakemon/">
           <img src="https://scratch.mit.edu/favicon.ico" />Scratch
