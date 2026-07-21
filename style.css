@@ -1,3 +1,7 @@
+html {
+  background-color: #17224d;
+  scrollbar-color: skyblue #00000000;
+}
 body {
   font-family: "Mona Sans", sans-serif;
   background: #17224d;
@@ -90,6 +94,8 @@ a:hover {
 }
 #about {
   width: 30%;
+  max-height: 150px;
+  overflow-y: auto;
 }
 .code {
   font-family: "Cascadia Code", monospace;
@@ -112,6 +118,9 @@ a:hover {
 
 a img {
   width: 25px;
+}
+.sitelinkbutton {
+  width: auto;
 }
 
 .navbar {
