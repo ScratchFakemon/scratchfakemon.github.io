@@ -6,6 +6,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <a href="buttonclicker">Button Clicker</a>
         <a href="numguess">Number Guesser</a>
         <a href="friendsitesnew">Friendsites</a>
+        <a href="thoughtboard">Thoughtboard</a>
         `; // <a href="minesweeper">Minesweeper</a>
 
   // TODO: Find higher-quality vector logos
@@ -17,7 +18,7 @@ document.addEventListener("DOMContentLoaded", () => {
           <img src="https://www.youtube.com/s/desktop/1ff7e4cf/img/favicon_32x32.png" />YouTube
         </a>
         <a href="https://github.com/ScratchFakemon">
-          <img src="https://github.githubassets.com/favicons/favicon-dark.png" />GitHub
+          <img src="https://github.githubassets.com/favicons/favicon-dark.svg" />GitHub
         </a>
         <a href="mailto:scratchfakemon@gmail.com">
           <img src="Mail Icon.svg" />Email

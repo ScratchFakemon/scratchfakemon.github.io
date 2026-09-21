@@ -85,14 +85,16 @@ a:hover {
   color: #2e4ff6;
 }
 #about,
-.code {
+.code,
+.thought {
   border-radius: 25px;
   background-color: #3b3c3fe0;
   padding: 10px 5px;
   justify-self: center;
   font-size: 14px;
 }
-#about {
+#about,
+.thought {
   width: 30%;
   max-height: 150px;
   overflow-y: auto;
@@ -126,7 +128,6 @@ a img {
 .navbar {
   background-color: skyblue;
   display: flex;
-  min-width: fit-content;
   padding: 5px;
   margin: 0 0 10px 0;
   align-content: center;
@@ -158,4 +159,7 @@ a img {
 }
 #minesweeper button:disabled {
   background-color: #3c8cb6;
+}
+small {
+  color: #e3e3e3;
 }
